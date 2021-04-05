@@ -7,7 +7,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 app.post('/validate-csv', (req, res) => {
-  console.log(req.body.csvData.replace(/^(,+\r\n)+/g, '').replace(/^(,+\n)+/g, ''))
   const csvList = req.body.csvData
     .replace(/^(,+\r\n|,+\n)+/g, '')
     .replace(/\r\n$/g, '')
